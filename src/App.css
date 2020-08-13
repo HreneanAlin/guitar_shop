@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+    overflow: visible;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    /* Pallet */
+    --clr-dark: #0A0908;
+    --clr-secundary: #49111C;
+    --clr-light: #F2F4F3;
+    --clr-lightShade: #A9927D;
+    --clr-darkShade: #5E503F;
+
+    /* Fonts */
+    --font-big: "Shadows Into Light", sanserif;
+    --font-main: "Raleway", sanserif;
+
+    --radius: .5rem;
+    --pading: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-family: var(--font-main);
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#root{
+    min-height: 3000px;
 }
 
-.App-link {
-  color: #61dafb;
+main{
+    padding-top: calc(var(--pading)*3);
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+    font-family: var(--font-big);
+    text-align: center;
 }
+
+/* Header */
+
+.title {
+    background-color: var(--clr-secundary);
+    color: var(--clr-light);
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.jombotron {
+    background-image: url("./images/gheader.jpg");
+    background-size: cover ;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    padding: 15vh 1em;
+}
+
+.jombotron p {
+    padding: .5rem;
+    background-color: rgba(255,255,255,.85);
+    border-radius: var(--radius);
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 6px;
+    word-spacing: 10px;
+    color: var(--clr-darkShade);
+}
+
+.jombotron strong {
+    font-size: larger;
+    color: var(--clr-secundary)
+}
+
+
+/*Navigation Bar*/
+nav {
+    position: sticky;
+    top: 0;
+
+
+}
+
+
+nav ul {
+    background-color: var(--clr-darkShade);
+    padding: 0;
+    list-style: none;
+    transform-origin: top;
+    transform: scale(1,0);
+    position: relative;
+    z-index: 10;
+    height: 0;
+
+
+
+}
+
+ul.active{
+    transform: scale(1,1);
+    transition: ease-in-out 200ms;
+    height: initial;
+
+}
+
+nav li {
+     padding: 0;
+    text-align: center;
+    color: var(--clr-light);
+}
+
+nav a{
+    padding: var(--pading);
+    display: block;
+    text-decoration: none;
+    color: var(--clr-light);
+}
+
+.active-link,
+nav a:hover{
+    background-color: var(--clr-lightShade);
+    color: var(--clr-dark);
+}
+
+.menu-container{
+    cursor:pointer;
+    background-color: var(--clr-darkShade);
+    color: var(--clr-light);
+    padding: var(--pading);
+    text-align: center;
+
+}
+
