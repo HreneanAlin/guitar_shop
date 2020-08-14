@@ -37,7 +37,6 @@ function App() {
                         <Sales/>
                     </Route>
 
-
                 </Switch>
 
             </Router>

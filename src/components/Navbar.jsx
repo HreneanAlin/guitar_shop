@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 const Navbar = () => {
     const [menuActive, setMenuActive] = useState(false);
+    const [change, setChange] = useState(false)
     const linkEl1 = useRef()
     const linkEl2 = useRef()
     const linkEl3 = useRef()
@@ -15,18 +16,22 @@ const Navbar = () => {
     useEffect(()=>{
 
         links.map(linkEl => {
-            console.log(document.baseURI)
+            linkEl.current.classList.remove("active-link")
+
             if(linkEl.current.href === document.baseURI){
+
                 return  linkEl.current.classList.add("active-link")
             }else
                 return  linkEl.current.classList.remove("active-link")
         })
 
-    },[document.baseURI])
+
+    },[change])
 
 
     const closeMenu = () => {
         setMenuActive(false);
+        setChange(!change)
     }
 
     return (
