@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {fetchGuitars} from "../api/Api";
 import Loader from "./Loader";
 import Error from "./Error";
+import {Link} from "react-router-dom";
 
 const Products = () => {
     const [guitars, setGuitars] = useState([])
@@ -42,7 +43,7 @@ const Products = () => {
                     <p>Type: <strong> {guitar.type} </strong></p>
                     <p>Price: <strong>{guitar.price} &#36;</strong></p>
                     <p> Add to Cart</p>
-                    <p>more information</p>
+                    <p> <Link to={`/products/${guitar.serialNumber}`}>more information </Link> </p>
 
                 </div>)}
             </div>

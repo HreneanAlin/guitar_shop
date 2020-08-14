@@ -13,6 +13,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Sales from "./components/Sales";
 import Home from "./components/Home";
+import Product from "./components/Product";
 
 function App() {
     return (
@@ -24,8 +25,11 @@ function App() {
                     <Route exact path="/">
                        <Home/>
                     </Route>
-                    <Route path="/products">
+                    <Route exact path="/products">
                         <Products/>
+                    </Route>
+                    <Route path='/products/:id'>
+                        <Product/>
                     </Route>
                     <Route path="/about">
                         <About/>
